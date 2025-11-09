@@ -1,7 +1,15 @@
-This is a simple little personal portfolio/personal website just for fun. It is my very first web dev project so it's definitely a work in progress.
+This is a simple little personal portfolio/personal website just for fun. It is my very first web dev project so it's definitely a work in progress with multiple themes and experimental features. 
 
+3 main pages: 
+-Home: Contact Me button, short desc, heading
+-Projects: Personal Website/Portfolio w/ gradient theme
+-Interests: Anime collage w/ desc, Book collage w/ desc, Hobbies collage w/ desc
 
+Contact Me Button:
+-Discord & Email buttons
+-Gradient theme
 
+________________________________________________________________________________________________________________________________
 
 <div align="center">
   <a href="https://moonshot.hackclub.com" target="_blank">
