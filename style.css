@@ -378,3 +378,223 @@ footer {
     }
 }
 
+body.projects-page {
+    background: #0b132b;
+    color: #e0e7ff;
+    min-height: 100vh;
+}
+
+.projects-header {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
+    padding: 100px 5% 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 30% 70%, rgba(96, 165, 250, 0.25), transparent 60%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0.5deg); }
+    50% { transform: translateY(-25px) rotate(-0.5deg); }
+
+}
+
+.projects-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.projects-header .subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+.project-block {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 4rem 0;
+    padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(100, 150, 225, 0.3);
+    transition: all 0.5 ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-block:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.3);
+    border-color: rgba(96, 165, 250, 0.5);
+}
+
+.project-block::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+    border-radius: 26px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.6 ease;
+    background-size: 300%;
+    animation: glowFlow 10s linear infinite;
+}
+
+@keyframes glowFlow {
+    0% { background-position: 0% 50% }
+    100% { background-position: 100% 50% }
+}
+
+.project-block:hover::before {
+    opacity: 1;
+}
+
+.project-img {
+    flex: 1;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 280px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7 ease;
+}
+
+.project-block:hover .project-img img {
+    transform: scale(1.08);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(11, 19, 43, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #93c5fd;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(4px);
+}
+
+.project-block:hover .img-overlay {
+    opacity: 1;
+}
+
+.project-text {
+    flex: 1.2;
+    padding: 0.5rem;
+}
+
+.project-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 1.2rem;
+}
+
+.tech-stack {
+    font-size: 1.05rem;
+    color: #93c5fd;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.project-links .btn-github {
+    display: inline-block;
+    padding: 0.85rem 1.8rem;
+    background: transparent;
+    color: #93c5fd;
+    border: 2px solid #60a5fa;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: all 0.4 ease;
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
+}
+
+.project-links .btn-github:hover {
+    background: rgba(96, 165, 250, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(59 130, 246, 0.4);
+    border-color: #93c5fd;
+
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 968px) {
+    .project-block,
+    .project-block.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-img {
+        min-height: 250px;
+        width: 100%;
+    }
+    
+    .projects-header h1 {
+        font-size: 2.8rem;
+    }
+
+    .project-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-header {
+        padding: 80px 5% 60px;
+    }
+
+    .project-block {
+        padding: 2rem;
+        margin: 3rem 0;
+    }
+
+    .project-links .btn-github {
+        width: 100%;
+    }
+}
+
+
+
+
+
